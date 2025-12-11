@@ -53,7 +53,12 @@ rules_explainer = FunctionTool(func=tool_get_uae_mortgage_rules)
 MODEL_NAME = os.getenv("MODEL_NAME", "groq/llama-3.3-70b-versatile")
 
 # Create LiteLLM model wrapper for Groq
-groq_model = LiteLlm(model=MODEL_NAME)
+# Set temperature=0 and top_p=1 for deterministic, reliable tool calling
+groq_model = LiteLlm(
+    model=MODEL_NAME,
+    temperature=0,
+    top_p=1,
+)
 
 
 # Create the root agent with Google ADK using LiteLLM
