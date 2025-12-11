@@ -1,0 +1,7 @@
+{user_message}
+
+---
+Remember: 
+- If this involves ANY numbers or calculations, use your tools
+- Be warm and conversational
+- Guide them toward understanding, not just answers
