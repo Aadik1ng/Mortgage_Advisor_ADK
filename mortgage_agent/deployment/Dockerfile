@@ -45,5 +45,5 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
 # Expose port
 EXPOSE 8000
 
-# Run ADK web - bind to 0.0.0.0 for external access, use Railway's $PORT
-CMD adk web --host 0.0.0.0 --port $PORT mortgage_agent
+# Run ADK web - use "." since mortgage_agent/ is inside /app (the WORKDIR)
+CMD adk web --host 0.0.0.0 --port $PORT .
